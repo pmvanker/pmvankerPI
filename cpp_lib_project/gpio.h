@@ -31,7 +31,7 @@ class rpi_gpio : public gpio_class
     rpi_gpio(uint16_t a_pin,string a_direction)
     {
         this->set_pin(a_pin);
-        this->set_direction(direction);
+        this->set_direction(a_direction);
     }
     ~ rpi_gpio()
     {
