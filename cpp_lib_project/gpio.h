@@ -69,7 +69,7 @@ class rpi_gpio : public gpio_class
         ofstream ofs; // output stream object
         string str_pin = to_string(this->pin);
         ofs.open("/sys/class/gpio/export");
-        ofs.write(str_pin.c_str,str_pin.size);
+        ofs << str_pin;
         ofs.close();            
         return (SUCCESS);
     }
@@ -78,7 +78,7 @@ class rpi_gpio : public gpio_class
         ofstream ofs; // output stream object
         string str_pin = to_string(this->pin);
         ofs.open("/sys/class/gpio/unexport");
-        ofs.write(str_pin.c_str,str_pin.size);
+        ofs << str_pin;
         ofs.close();            
         return (SUCCESS);
     }
