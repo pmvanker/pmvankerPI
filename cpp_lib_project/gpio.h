@@ -42,6 +42,7 @@ class rpi_gpio : public gpio_class
     {
         pin = arg_pin;
         this->export_pin();
+        return (SUCCESS);
     }
     int8_t set_direction(string str_dir)
     {
@@ -50,15 +51,15 @@ class rpi_gpio : public gpio_class
         string str_pin = to_string(this->pin);
         string pin_path = "/sys/class/gpio/gpio";
         pin_path += str_pin;
-        pin_path += "direction";
+        pin_path += "/direction";
         ofs.open(pin_path);
         if(direction == "out")
         {
-            ofs.write("out",4);
+            ofs << "out";
         }
         else
         {
-            ofs.write("in",3);
+            ofs << "in" ;
         }
         ofs.close();            
         return (SUCCESS);
@@ -88,14 +89,15 @@ class rpi_gpio : public gpio_class
         string str_pin = to_string(this->pin);
         string pin_path = "/sys/class/gpio/gpio";
         pin_path += str_pin;
+        pin_path += "/value";
         ofs.open(pin_path);
         if(data)
         {
-            ofs.write("1",2);
+            ofs << "1";
         }
         else
         {
-            ofs.write("0",2);
+            ofs << "0";
         }
         ofs.close();            
         return (SUCCESS);
@@ -107,6 +109,7 @@ class rpi_gpio : public gpio_class
         string str_pin = to_string(this->pin);
         string pin_path = "/sys/class/gpio/gpio";
         pin_path += str_pin;
+        pin_path += "/value";
         rfs.open(pin_path);
         rfs.getline(read_data,2);
         if(read_data == "0")
