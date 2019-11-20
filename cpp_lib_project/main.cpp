@@ -1,11 +1,12 @@
 #include <iostream>
+#include <time.h>
 #include "gpio.h"
 using namespace std;
 
 int main()
 {
-    rpi_gpio out_pin(10, "out");
-    rpi_gpio in_pin(11, "in");
+    gpio out_pin;
+    gpio in_pin;
 
     out_pin.digital_write(1);
 
