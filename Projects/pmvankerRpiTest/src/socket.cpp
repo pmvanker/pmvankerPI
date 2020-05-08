@@ -28,8 +28,8 @@ int TcpServer::accept_connection(){
  * @param[IN]:		data : buffer data
  * 					size : size of data
  ***************************************************************/
-int TcpServer::transfer(char *data, int size){
-	return send(active_sfd,data,size,MSG_DONTWAIT);
+int TcpServer::transfer(std::string str){
+	return send(active_sfd,str.c_str(),str.length(),MSG_DONTWAIT);
 }
 
 
@@ -39,8 +39,11 @@ int TcpServer::transfer(char *data, int size){
  * @param[OUT]:     data : received data
  * 					size : size of data
  ***************************************************************/
-int TcpServer::receive(char *data, int size){
-	return recv(active_sfd,data,size,MSG_WAITFORONE);
+int TcpServer::receive(std::string &str, int size){
+	char data[size] = {0};
+	int ret = recv(active_sfd,data,size,MSG_WAITFORONE);
+	str = data;
+	return ret;
 }
 
 

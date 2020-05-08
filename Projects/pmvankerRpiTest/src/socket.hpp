@@ -15,6 +15,7 @@
 #include <netinet/ip.h> /* superset of previous */
 #include <arpa/inet.h>
 #include <unistd.h>
+#include <string>
 
 #define DEFAULT_PORT	3001
 
@@ -38,8 +39,8 @@ class TcpServer{
 public:
 	TcpServer();						/* default constructor */
 	TcpServer(int port);				/* Parameterized constructor */
-	int transfer(char *data,int size);
-	int receive(char *data,int size);
+	int transfer(std::string);
+	int receive(std::string &,int size);
 	int accept_connection();
 	~TcpServer(){
 		close(active_sfd);

@@ -1,0 +1,13 @@
+clone 
+
+git clone https://github.com/mpromonet/v4l2rtspserver.git
+
+compile
+cmake . -DCMAKE_C_COMPILER=arm-linux-gnueabihf-gcc -DCMAKE_CXX_COMPILER=arm-linux-gnueabihf-g++
+
+make
+
+copy to pi
+scp v4l2rtspserver pi@192.168.0.103:/home/pi/project/
+
+done.
