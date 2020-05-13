@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,libpmvankerPI.so -o libpmvankerPI.so CMakeFiles/pmvankerPI.dir/bus/I2CDevice.cpp.o CMakeFiles/pmvankerPI.dir/CMakeFiles/3.5.1/CompilerIdCXX/CMakeCXXCompilerId.cpp.o CMakeFiles/pmvankerPI.dir/gpio/util.cpp.o CMakeFiles/pmvankerPI.dir/gpio/GPIO.cpp.o CMakeFiles/pmvankerPI.dir/network/socket.cpp.o -lpthread 

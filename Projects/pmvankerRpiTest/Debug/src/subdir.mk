@@ -4,15 +4,21 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../src/gpio.cpp \
 ../src/main.cpp \
+../src/pwm.cpp \
 ../src/socket.cpp 
 
 OBJS += \
+./src/gpio.o \
 ./src/main.o \
+./src/pwm.o \
 ./src/socket.o 
 
 CPP_DEPS += \
+./src/gpio.d \
 ./src/main.d \
+./src/pwm.d \
 ./src/socket.d 
 
 

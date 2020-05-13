@@ -21,8 +21,9 @@
 #include <sys/types.h>
 #include <unistd.h>
 #include <signal.h>
+#include <iostream>
 
-#include "gpio.h"
+#include "GPIO.h"
 
 #define DEFAULT_PORT	3001
 #define RTSP_SERVER_BIN_PATH "/home/pi/project/v4l2rtspserver"

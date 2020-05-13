@@ -1,0 +1,7 @@
+/home/pmvanker/github/pmvankerPI/library/build/CMakeFiles/install.dir
+/home/pmvanker/github/pmvankerPI/library/build/CMakeFiles/list_install_components.dir
+/home/pmvanker/github/pmvankerPI/library/build/CMakeFiles/rebuild_cache.dir
+/home/pmvanker/github/pmvankerPI/library/build/CMakeFiles/pmvankerPI.dir
+/home/pmvanker/github/pmvankerPI/library/build/CMakeFiles/install/strip.dir
+/home/pmvanker/github/pmvankerPI/library/build/CMakeFiles/install/local.dir
+/home/pmvanker/github/pmvankerPI/library/build/CMakeFiles/edit_cache.dir

@@ -7,7 +7,7 @@
  * Praful Vanker                04/05/2020             Initial file
  * *******************************************************************/
 
-#include "socket.hpp"
+#include "socket.h"
 
 /**************************************************************
  * Function Name:   accept_connection()
@@ -90,30 +90,7 @@ void socketReceiver(){
 	while(1)
 	{
 		if(tcp_socket.receive(str,50)>0){
-//			std::cout << "data :" << str << std::endl;
-			if(str == "videostream"){
-				if((child_pid = fork()) !=0){/* parent process */
-					sleep(1);
-					string path;
-					path = "rtsp://";
-					path += get_ip();
-					path += ":8554/unicast";
-					tcp_socket.transfer(path);
-				}else{/* child process */
-					execl(RTSP_SERVER_BIN_PATH,NULL);
-				}
-			}
-			else if(str == "StopVideoStream"){
-				kill(child_pid,SIGKILL);
-			}
-			else if(str == "gpio"){
-					auto ret = gpio_test();
-					if( (ret != GPIO_DIRECTION_FAIL) && (ret != GPIO_WRITE_FAIL)){
-						tcp_socket.transfer("pass");
-					}
-				}
-
-			tcp_socket.transfer("fail");
+			std::cout << "data :" << str << std::endl;
 		}
 		usleep(1);
 	}

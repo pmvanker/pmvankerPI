@@ -55,6 +55,7 @@ clean:
 	-@echo ' '
 
 post-build:
+	-@echo 'scp pmvankerRpiTest pi@192.168.0.103:~/project/'
 	-scp pmvankerRpiTest pi@192.168.0.103:~/project/
 	-@echo ' '
 
